@@ -1,0 +1,17 @@
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.Service.deps.json
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.Service.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.Service.pdb
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.DAL.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.Domain.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.DAL.pdb
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\bin\Debug\net8.0\ToDoList.Domain.pdb
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.csproj.AssemblyReference.cache
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.AssemblyInfoInputs.cache
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.AssemblyInfo.cs
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.csproj.CoreCompileInputs.cache
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.csproj.CopyComplete
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\refint\ToDoList.Service.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.pdb
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ref\ToDoList.Service.dll
