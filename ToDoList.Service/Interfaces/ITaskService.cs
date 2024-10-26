@@ -7,4 +7,5 @@ namespace ToDoList.Service.Interfaces;
 public interface ITaskService
 {
     public Task<BaseResponse<TaskEntity>> Create(CreateTaskDto dto);
+    public Task<BaseResponse<IEnumerable<TaskDto>>> GetTasks();
 }

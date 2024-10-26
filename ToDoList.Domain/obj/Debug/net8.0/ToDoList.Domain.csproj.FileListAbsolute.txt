@@ -9,3 +9,4 @@ C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Domain\obj\Debug\net8.0\ToDoLi
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Domain\obj\Debug\net8.0\refint\ToDoList.Domain.dll
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Domain\obj\Debug\net8.0\ToDoList.Domain.pdb
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Domain\obj\Debug\net8.0\ref\ToDoList.Domain.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Domain\obj\Debug\net8.0\ToDoList.Domain.sourcelink.json

@@ -4,6 +4,7 @@ using ToDoList.DAL.Interfaces;
 using ToDoList.Domain.Dto.Task;
 using ToDoList.Domain.Entity;
 using ToDoList.Domain.Enum;
+using ToDoList.Domain.Extension;
 using ToDoList.Domain.Response;
 using ToDoList.Service.Interfaces;
 
@@ -25,6 +26,7 @@ public class TaskService : ITaskService
     {
         try
         {
+            dto.Validate();
             _logger.LogInformation($"Request for creating a task - {dto.Name}");
             var task = await _repository.GetAll().Where(x => x.CreationDate.Date == DateTime.Today)
                 .FirstOrDefaultAsync(x => x.Name == dto.Name);
@@ -60,6 +62,38 @@ public class TaskService : ITaskService
             _logger.LogError(e, $"[{nameof(Create)}]: {e.Message}");
             return new BaseResponse<TaskEntity>()
             {
+                Description = $"{e.Message}",
+                StatusCode = StatusCode.InternalServerError
+            };
+        }
+    }
+
+    public async Task<BaseResponse<IEnumerable<TaskDto>>> GetTasks()
+    {
+        try
+        {
+            var task = await _repository.GetAll().Select(x => new TaskDto()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                Description = x.Description,
+                Completed = x.Completed ? "Готова" : "В процессе",
+                Priority = x.Priority.GetDisplayName(),
+                CreationDate = x.CreationDate.ToLongDateString()
+            }).ToListAsync();
+
+            return new BaseResponse<IEnumerable<TaskDto>>()
+            {
+                Data = task,
+                StatusCode = StatusCode.Ok
+            };
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, $"[{nameof(GetTasks)}]: {e.Message}");
+            return new BaseResponse<IEnumerable<TaskDto>>()
+            {
+                Description = $"{e.Message}",
                 StatusCode = StatusCode.InternalServerError
             };
         }

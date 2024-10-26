@@ -13,3 +13,4 @@ C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.DAL\obj\Debug\net8.0\ToDoList.
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.DAL\obj\Debug\net8.0\refint\ToDoList.DAL.dll
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.DAL\obj\Debug\net8.0\ToDoList.DAL.pdb
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.DAL\obj\Debug\net8.0\ref\ToDoList.DAL.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.DAL\obj\Debug\net8.0\ToDoList.DAL.sourcelink.json

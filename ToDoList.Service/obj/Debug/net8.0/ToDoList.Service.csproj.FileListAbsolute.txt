@@ -15,3 +15,4 @@ C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoL
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\refint\ToDoList.Service.dll
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.pdb
 C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ref\ToDoList.Service.dll
+C:\Users\REDACTED\RiderProjects\ToDoList\ToDoList.Service\obj\Debug\net8.0\ToDoList.Service.sourcelink.json

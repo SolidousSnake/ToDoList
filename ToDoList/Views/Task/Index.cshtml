@@ -21,10 +21,60 @@
     <button id="createTask" class="btn btn-primary">Создать</button>
 </form>
 
+<table class="table table-dark table-hover" id="taskTableId">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Priority</th>
+        <th>Description</th>
+        <th>Completed</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+        
+    </tbody>
+</table>
+
 @section Scripts
 {
+    <script type="text/javascript" src="https://cdn.datatables.net/2.1.8/js/dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
+        let dataTable = $('#taskTableId').DataTable({
+            info: true,
+            serverSide: true,
+            searching: false,
+            paging: false,
+            sorting: false,
+            ajax: {
+                url: "@Url.Action("TaskHandler")",
+                method: 'POST',
+                data: null
+            },
+            columns: [
+                {data: 'name'},
+                {data: 'priority'},
+                {data: 'description'},
+                {data: 'completed'},
+                {   
+                    data: null,
+                    sortable: false,
+                    render: function (data,type){
+                        return '<button class="btn btn-success btn-sm center-block">Complete</button>'    
+                    }
+                },
+            ],
+            createdRow: function (nRow, data){
+                for (var i = 0; i < dataTable.columns().header().length - 1; i++){
+                        $('td', nRow).eq(i).css('cursor', 'pointer');
+                        $('td', nRow).eq(i).on('click', null);
+                }
+                $('td button', nRow).eq(i).on('click', null);
+
+            }
+        });
+    
         $('#createTask').on('click', function (e){
             e.preventDefault();
             $.ajax({
