@@ -5,6 +5,7 @@ using ToDoList.Domain.Dto.Task;
 using ToDoList.Domain.Entity;
 using ToDoList.Domain.Enum;
 using ToDoList.Domain.Extension;
+using ToDoList.Domain.Filter.Task;
 using ToDoList.Domain.Response;
 using ToDoList.Service.Interfaces;
 
@@ -68,11 +69,49 @@ public class TaskService : ITaskService
         }
     }
 
-    public async Task<BaseResponse<IEnumerable<TaskDto>>> GetTasks()
+    public async Task<BaseResponse<bool>> EndTask(long id)
     {
         try
         {
-            var task = await _repository.GetAll().Select(x => new TaskDto()
+            var task = await _repository.GetAll().FirstOrDefaultAsync(x => x.Id == id);
+            if (task == null)
+            {
+                return new BaseResponse<bool>()
+                {
+                    StatusCode = StatusCode.TaskNotFound,
+                    Description = "Task not found"
+                };
+            }
+
+            task.Completed = true;
+            await _repository.Update(task);
+            
+            return new BaseResponse<bool>()
+            {
+                Description = $"Task completed",
+                StatusCode = StatusCode.Ok
+            };
+        }
+        catch (Exception e)
+        {
+            _logger.LogError(e, $"[{nameof(EndTask)}]: {e.Message}");
+            return new BaseResponse<bool>()
+            {
+                Description = $"{e.Message}",
+                StatusCode = StatusCode.InternalServerError
+            };
+        }
+    }
+
+    public async Task<BaseResponse<IEnumerable<TaskDto>>> GetTasks(TaskFilter filter)
+    {
+        try
+        {
+            var task = await _repository.GetAll()
+                .Where(x => !x.Completed)
+                .WhereIf(!string.IsNullOrWhiteSpace(filter.Name), x => x.Name == filter.Name)
+                .WhereIf(filter.Priority.HasValue, x => x.Priority == filter.Priority)
+                .Select(x => new TaskDto()
             {
                 Id = x.Id,
                 Name = x.Name,
